@@ -69,22 +69,11 @@ public class Ex1 {
 
         } catch (FileNotFoundException e) {
             System.out.println("Ficheiro não existe!");
-        }
-
-        
+        }        
 
         for (Map.Entry<String,TreeMap<String,Integer>> entry  : dic.entrySet()) {
             System.out.println(entry.getKey()+"="+entry.getValue());
         }
-            
-        
-            
-        
-        
-        
-
-        
-
 
     }
 }

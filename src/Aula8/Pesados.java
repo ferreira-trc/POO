@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class Pesados extends Automovel {
     
-    private int peso;
+    private Integer peso;
 
-    public Pesados(String matricula, String marca, String modelo, double cilindrada, int numQuadro, int peso){
+    public Pesados(String matricula, String marca, String modelo, Double cilindrada, Integer numQuadro, Integer peso){
         super(matricula, marca, modelo, cilindrada, numQuadro);
         this.peso=peso;
         assert(peso>3500):"peso invalido!";
     }
 
 
-    public Pesados(String matricula, String marca, String modelo, double cilindrada, ArrayList<Integer> kms, int numQuadro, int peso){
+    public Pesados(String matricula, String marca, String modelo, Double cilindrada, ArrayList<Integer> kms, Integer numQuadro, Integer peso){
         super(matricula, marca, modelo, cilindrada, kms, numQuadro);
         this.peso=peso;
         assert(peso>3500):"peso invalido!";

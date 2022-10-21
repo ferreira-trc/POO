@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public abstract class Automovel extends Viaturas  {
 
-    private int numQuadro;
+    private Integer numQuadro;
 
-    public Automovel(String matricula, String marca, String modelo, double cilindrada, int numQuadro){
+    public Automovel(String matricula, String marca, String modelo, Double cilindrada, Integer numQuadro){
         super(matricula, marca, modelo, cilindrada);
         this.numQuadro=numQuadro;
         assert(numQuadro>0):"Nº de Quadro invalido!";
     }
 
 
-    public Automovel(String matricula, String marca, String modelo, double cilindrada, ArrayList<Integer> kms, int numQuadro){
+    public Automovel(String matricula, String marca, String modelo, Double cilindrada, ArrayList<Integer> kms, Integer numQuadro){
         super(matricula, marca, modelo, cilindrada, kms);
         this.numQuadro=numQuadro;
         assert(numQuadro>0):"Nº de Quadro invalido!";

@@ -7,13 +7,13 @@ public abstract class Viaturas implements KmPercorridosInterface{
     private String matricula;
     private String marca;
     private String modelo;
-    private double cilindrada;
+    private Double cilindrada;
     private ArrayList<Integer> kms;
-    private boolean disp;
+    private Boolean disp;
 
-    public Viaturas(String matricula, String marca, String modelo, double cilindrada){
+    public Viaturas(String matricula, String marca, String modelo, Double cilindrada){
         this.matricula=matricula;
-        assert(matricula.length() == 6):"matricula invalida!";
+        assert(matricula.length() != 6):"matricula invalida!";
         this.marca=marca;
         this.modelo=modelo;
         this.cilindrada=cilindrada;
@@ -22,7 +22,7 @@ public abstract class Viaturas implements KmPercorridosInterface{
         disp=true;
     }
 
-    public Viaturas(String matricula, String marca, String modelo, double cilindrada, ArrayList<Integer> kms ){
+    public Viaturas(String matricula, String marca, String modelo, Double cilindrada, ArrayList<Integer> kms ){
         this.matricula=matricula;
         assert(matricula.length() == 6):"matricula invalida!";
         this.marca=marca;
@@ -88,12 +88,12 @@ public abstract class Viaturas implements KmPercorridosInterface{
 
 
     @Override
-    public void trajeto(int quilometros) {
+    public final void trajeto(int quilometros) {
         addKms(quilometros);;        
     }
 
     @Override
-    public int ultimoTrajeto() {
+    public final int ultimoTrajeto() {
 
         int index = getKms().size()-1;
 
@@ -101,7 +101,7 @@ public abstract class Viaturas implements KmPercorridosInterface{
     }
 
     @Override
-    public int distanciaTotal() {
+    public final int distanciaTotal() {
         int sum = 0;
 
         for (int index = 0; index < getKms().size(); index++) {

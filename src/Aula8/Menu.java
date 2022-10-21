@@ -26,7 +26,7 @@ public class Menu {
         
     System.out.println("1- Gerir Empresa\n");
     System.out.println("2-Gerir Viaturas\n");
-    System.out.println("0- Sair");
+    System.out.println("0- Sair\n");
 
     boolean exit = true;      
 

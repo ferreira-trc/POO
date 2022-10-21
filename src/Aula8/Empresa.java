@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Empresa {
     
     private String nome;
-    private int codigoPostal;
+    private Integer codigoPostal;
     private String email;
     private ArrayList <Viaturas> listaViaturas;    
 
-    public Empresa(String nome, int codigoPostal, String email, ArrayList <Viaturas> listaViaturas){
+    public Empresa(String nome, Integer codigoPostal, String email, ArrayList <Viaturas> listaViaturas){
         this.nome=nome;
         this.codigoPostal=codigoPostal;
         this.email=email;
@@ -32,14 +32,15 @@ public class Empresa {
         
         for (int index = 0; index < listaViaturas.size(); index++) {
 
-            Viaturas v = listaViaturas.get(index);
-            String m = v.getMatricula();
-            boolean cond = matricula.equals(m);
+            Viaturas v = listaViaturas.get(index);             
+            boolean cond = matricula.equals(v.getMatricula());
 
             if (cond) {
                 return v;
             }            
         }
+
+        System.out.println("A Viatura não existe");
         return null; 
         }
 
@@ -53,7 +54,7 @@ public class Empresa {
 
         for (Viaturas v : listaViaturas) {
             if (v instanceof Motociclo) {
-                listaMotociclos.add((Motociclo)v);
+                listaMotociclos.add((Motociclo) v);
             }
         }        
         
@@ -111,14 +112,15 @@ public class Empresa {
         this.email=email;
     }
 
-    public void addViatura(Viaturas v) {        
-        listaViaturas.add(v);
+    public void addViatura(Viaturas v) {
+        this.listaViaturas.add(v);
     }   
 
     public void removeViatura(String matricula) {
         for (int index = 0; index < listaViaturas.size(); index++) {
 
-            boolean cond = listaViaturas.get(index).getMatricula() == matricula;
+            boolean cond = listaViaturas.get(index).getMatricula().equals(matricula);
+            
             if (cond) { 
                 listaViaturas.remove(index);
                 System.out.println("Viatura Abatida");
@@ -132,9 +134,8 @@ public class Empresa {
 
         for (int index = 0; index < listaViaturas.size(); index++) {
 
-            Viaturas v = listaViaturas.get(index);
-            String m = v.getMatricula();
-            boolean cond = matricula.equals(m);
+            Viaturas v = listaViaturas.get(index);            
+            boolean cond = matricula.equals(v.getMatricula());
 
             if (cond) {
                 v.setDisp(false);
