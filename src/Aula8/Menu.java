@@ -24,9 +24,9 @@ public class Menu {
     ArrayList<Viaturas> listaViaturas = new ArrayList<>();
     Empresa empresa = new Empresa(nome, codigoPostal, email, listaViaturas);
         
-    System.out.println("1- Gerir Empresa\n");
-    System.out.println("2-Gerir Viaturas\n");
-    System.out.println("0- Sair\n");
+    System.out.println("1- Gerir Empresa");
+    System.out.println("2-Gerir Viaturas");
+    System.out.println("0- Sair\n\n");
 
     boolean exit = true;      
 
@@ -66,7 +66,10 @@ public class Menu {
           System.out.println("Essa opessão nao existe!\n Escolha outra");
           System.out.print("Escolha: ");
           escolha = sc.nextInt();
+          sc.nextLine();
           System.out.println();
+          System.out.println();
+          
       }     
               
       return escolha;
@@ -697,10 +700,12 @@ public class Menu {
       
       System.out.print("Matricula: ");
       String matricula = sc.nextLine();
-
+      int n = matricula.length();
+      System.out.println(n);
       boolean cond1 = matricula.length() == 6;
 
       while (cond1 == false) {
+        System.out.println(n);
         System.out.println("matricula invalida! Escreva uma nova apenas com 6 digitos");
         System.out.print("Matricula: ");
         matricula = sc.nextLine();
